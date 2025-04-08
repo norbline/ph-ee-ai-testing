@@ -16,12 +16,12 @@ print("Log structure sample:")
 print(df.head())
 
 # Preprocessing: Convert timestamp to datetime & extract time features
-df['timestamp'] = pd.to_datetime(df['timestamp'])
-df['hour'] = df['timestamp'].dt.hour
-df['minute'] = df['timestamp'].dt.minute
+df['@timestamp'] = pd.to_datetime(df['@timestamp'])
+df['hour'] = df['@timestamp'].dt.hour
+df['minute'] = df['@timestamp'].dt.minute
 
 # Encode categorical features
-categorical_features = ['tenant', 'endpoint', 'status']
+categorical_features = ['Platform-TenantId', 'url', 'status']
 encoder = OneHotEncoder()
 encoded = encoder.fit_transform(df[categorical_features]).toarray()
 
@@ -39,7 +39,7 @@ df['anomaly'] = model.fit_predict(features)
 df['anomaly_label'] = df['anomaly'].apply(lambda x: 'anomaly' if x == -1 else 'normal')
 
 # Output: Save results with anomaly labels
-df[['timestamp', 'tenant', 'endpoint', 'status', 'message', 'anomaly_label']].to_csv('anomaly_detection_report.csv', index=False)
+df[['@timestamp', 'Platform-TenantId', 'url', 'status', 'anomaly_label']].to_csv('anomaly_detection_report.csv', index=False)
 
 # Summary
 print("Anomaly detection complete.")
