@@ -1,0 +1,8 @@
+model:
+  contamination: 0.05
+  random_state: 42
+paths:
+  input_logs: data/logs/synthetic_ph_ee_logs.json
+  output_report: data/outputs/anomaly_detection_report.csv
+  model_file: data/models/isolation_forest.pkl
+
