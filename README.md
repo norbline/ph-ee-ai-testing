@@ -9,15 +9,6 @@ This project is a Proof of Concept (PoC) demonstrating how AI techniques can be 
 - Leverage AI models to assess stability
 - Integrate OpenTelemetry, Elasticsearch, and Kibana for observability
 
-## 📊 Notebook Automation & CI via GitHub Actions
-
-Every time you push updates to your notebook, GitHub Actions will automatically:
-
-- Run the notebook (`model_experimentation.ipynb`)
-- Export results to an HTML report
-- Upload the report as a GitHub Actions artifact
-- Publish the report as a GitHub Page (if configured)
-
 ##  Getting Started
 
 1. Clone this repo
