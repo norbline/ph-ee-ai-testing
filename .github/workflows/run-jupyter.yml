@@ -1,4 +1,4 @@
-name: Run Jupyter Model Evaluation
+name: Upload Static Report
 
 on:
   push:
@@ -6,29 +6,15 @@ on:
   pull_request:
 
 jobs:
-  run-jupyter:
+  upload-report:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repo
       uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
-
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-
-    - name: Run Jupyter Notebook and export HTML
-      run: |
-        jupyter nbconvert --to html --execute notebooks/model_experimentation.ipynb --output docs/report.html
-
-    - name: Upload HTML result as artifact
-      uses: actions/upload-artifact@v4
+    - name: Upload existing report.html as artifact
+      uses: actions/upload-artifact@v3
       with:
         name: notebook-output
         path: docs/report.html
