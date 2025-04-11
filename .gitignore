@@ -1,0 +1,23 @@
+# .gitignore
+
+# Ignore Python environment and cache
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+.env
+.venv
+myenv/
+
+# Jupyter checkpoint files
+.ipynb_checkpoints
+
+# Ignore logs and temp files
+*.log
+*.tmp
+*.swp
+
+# Allow output reports
+!docs/report.html

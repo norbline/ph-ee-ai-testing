@@ -31,4 +31,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: notebook-output
-        path: notebooks/result.html
+        path: docs/report.html
