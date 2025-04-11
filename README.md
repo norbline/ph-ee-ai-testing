@@ -36,7 +36,7 @@ jupyter notebook notebooks/model_experimentation.ipynb
 
 You can preview the results of the AI-driven anomaly detection directly without running the code:
 
- [Click to View Report](docs/report.html)
+ [Click to View Report](https://norbline.github.io/ph-ee-ai-testing/report.html)
 
 If you're viewing this from GitHub, just click the link above to see the rendered HTML report.
 
