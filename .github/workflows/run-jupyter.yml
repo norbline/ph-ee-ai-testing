@@ -25,10 +25,10 @@ jobs:
 
     - name: Run Jupyter Notebook and export HTML
       run: |
-        jupyter nbconvert --to html --execute notebooks/model_experimentation.ipynb --output result.html
+        jupyter nbconvert --to html --execute notebooks/model_experimentation.ipynb --output docs/report.html
 
     - name: Upload HTML result as artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: notebook-output
         path: docs/report.html
